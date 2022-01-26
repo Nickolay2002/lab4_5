@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 int str_len1(char* source)
 {
 	int i = 0;
@@ -38,8 +37,8 @@ int str_len4(char source[])
 		i++;
 	}
 	return i;
-
 }
+
 int str_cmp1(const char* left_s, const char* right_s)
 {
 	int result = 0;
@@ -92,15 +91,27 @@ int str_cmp2(const char* left_s, const char* right_s)
 	return result;
 
 }
-void str_cmp3()
+
+int str_cmp3(const char* left_s, const char* right_s)
 {
+	for (int i = 0;; i++)
+	{
+		if (left_s[i] != right_s[i])
+			return left_s[i] < right_s[i] ? -1 : 1;
+		if (left_s[i] == '\0')
+			return 0;
+	}
+}
+
+int str_cmp4(const char* left_s, const char* right_s)
+{
+	return *left_s > *right_s ?
+		1 : *left_s < *right_s ? -1 :
+		*left_s ? str_cmp4(left_s + 1, right_s + 1)
+		: 0;
 
 }
-void str_cmp4()
-{
-
-}
-void str_del1(int length, char* str)
+void str_del1(int length, char* str, int p, int k)
 {
 	const char whitespace = ' ';
 	int i, j;
@@ -122,17 +133,29 @@ void str_copy1(char* destination, char* source)
 	}
 	destination[i] = '\0';
 }
-void str_copy2()
+void str_copy2(char* destination, char* source)
 {
-
+	int i;
+	for (i = 0; i < strlen(source); i ++)
+	{
+		destination[i] = source[i];
+	}
+	destination[i] = '\0';
 }
-void str_copy3()
+void str_copy3(char* destination, char* source)
 {
-
+	while (*source != '\0')
+	{
+		*destination++ = *source++;
+	}
+	*destination = '\0';
 }
-void str_copy4()
+void str_copy4(char* destination, char* source)
 {
-
+	do 
+	{
+		*destination++ = *source;
+	} while (*source++);
 }
 
 int main()
