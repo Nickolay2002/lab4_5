@@ -174,7 +174,7 @@ int main()
 	//s1 = "12";
 	printf(
 		"str_cmp1('%s,%s')=%d %d\n",
-		s2,s1, str_cmp1(s2,s1),//sdqwd
+		s2,s1, str_cmp1(s2,s1),//sdqwdqwdqw1wddw
 		str_cmp1(s2, s1)==strcmp(s2,s1)
 	);
 
