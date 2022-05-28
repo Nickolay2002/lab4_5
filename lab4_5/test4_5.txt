@@ -1,0 +1,7 @@
+7 
+1 2   123abc 1abc
+6 2   123abc 123abc
+1 12  123abc 123abc
+0 2   123abc 123abc
+-10 2 123abc 123abc
+5 0   123abc 123abc
